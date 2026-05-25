@@ -351,8 +351,8 @@ export default function Dashboard() {
         <div style={s.sidebarFooter}>
           <div style={s.memberName}>{member?.first_name} {member?.last_name}</div>
           <div style={s.memberTier}>{member?.tier || 'essential'} plan</div>
-          <button onClick={() => setShowIntake(true)} style={{ ...s.navBtn, fontSize: '0.75rem', color: 'var(--muted)', marginTop: '0.25rem' }}>📋 Update intake form</button>
-          <button onClick={logout} style={{ ...s.navBtn, fontSize: '0.75rem', color: 'var(--muted)' }}>Sign out</button>
+          <button onClick={() => setShowIntake(true)} style={{ ...s.navBtn, fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)', marginTop: '0.25rem' }}>📋 Update intake form</button>
+          <button onClick={logout} style={{ ...s.navBtn, fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)' }}>Sign out</button>
         </div>
       </aside>
 
@@ -586,16 +586,16 @@ export default function Dashboard() {
 
 const s = {
   wrap: { display: 'flex', minHeight: '100vh', background: 'var(--black)' },
-  sidebar: { width: '220px', flexShrink: 0, background: 'var(--surface)', borderRight: '1px solid var(--border)', display: 'flex', flexDirection: 'column', padding: '1.5rem 1rem' },
+  sidebar: { width: '240px', flexShrink: 0, background: '#111111', borderRight: '1px solid rgba(255,255,255,0.12)', display: 'flex', flexDirection: 'column', padding: '1.5rem 1rem' },
   sidebarLogo: { fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.4rem', letterSpacing: '0.1em', color: '#c9a84c', marginBottom: '2rem', paddingLeft: '0.5rem' },
   nav: { display: 'flex', flexDirection: 'column', gap: '0.25rem', flex: 1 },
-  navBtn: { background: 'none', border: 'none', color: 'rgba(245,242,238,0.75)', padding: '0.7rem 0.75rem', textAlign: 'left', fontSize: '0.85rem', borderRadius: '4px', transition: 'all 0.15s', cursor: 'pointer' },
-  navActive: { background: 'rgba(201,168,76,0.12)', color: '#c9a84c', borderLeft: '2px solid #c9a84c' },
+  navBtn: { background: 'none', border: 'none', color: '#ffffff', padding: '0.75rem 0.85rem', textAlign: 'left', fontSize: '0.88rem', borderRadius: '4px', transition: 'all 0.15s', cursor: 'pointer', letterSpacing: '0.01em', fontWeight: '400' },
+  navActive: { background: 'rgba(201,168,76,0.15)', color: '#c9a84c', borderLeft: '3px solid #c9a84c', paddingLeft: '0.65rem', fontWeight: '500' },
   sidebarFooter: { borderTop: '1px solid var(--border)', paddingTop: '1rem' },
-  memberName: { fontSize: '0.85rem', fontWeight: '500', color: '#f5f2ee' },
+  memberName: { fontSize: '0.9rem', fontWeight: '500', color: '#ffffff' },
   memberTier: { fontSize: '0.72rem', color: '#c9a84c', textTransform: 'uppercase', letterSpacing: '0.08em', marginTop: '0.2rem', marginBottom: '0.5rem' },
-  main: { flex: 1, padding: '2.5rem 3rem', overflowY: 'auto' },
-  pageTitle: { fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.5rem', letterSpacing: '0.04em', color: 'var(--white)', marginBottom: '2rem' },
+  main: { flex: 1, padding: '2.5rem 3rem', overflowY: 'auto', background: '#0f0f0f' },
+  pageTitle: { fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.5rem', letterSpacing: '0.04em', color: '#ffffff', marginBottom: '2rem' },
   planHeader: { display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' },
   planTitle: { fontSize: '1.1rem', fontWeight: '500' },
   badge: { background: 'rgba(201,168,76,0.12)', color: '#c9a84c', fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.3rem 0.75rem', borderRadius: '2px' },
