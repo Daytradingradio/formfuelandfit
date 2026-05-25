@@ -115,6 +115,15 @@ const initDB = async () => {
       created_at TIMESTAMPTZ DEFAULT NOW()
     );
 
+    CREATE TABLE IF NOT EXISTS body_sculpting (
+      id SERIAL PRIMARY KEY,
+      member_id INT REFERENCES members(id) ON DELETE CASCADE,
+      selected_muscles JSONB DEFAULT '[]',
+      sculpting_goals TEXT,
+      priority_areas JSONB DEFAULT '[]',
+      updated_at TIMESTAMPTZ DEFAULT NOW()
+    );
+
     CREATE TABLE IF NOT EXISTS videos (
       id SERIAL PRIMARY KEY,
       title VARCHAR(200) NOT NULL,

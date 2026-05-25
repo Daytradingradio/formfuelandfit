@@ -179,7 +179,8 @@ export default function AdminPanel() {
   const selectMember = async (m) => {
     setSelected(m)
     const detail = await api(`/api/admin/members/${m.id}`)
-    setSelectedDetail(detail)
+    const sculpting = await api(`/api/sculpting/admin/${m.id}`)
+    setSelectedDetail({ ...detail, sculpting: sculpting.sculpting })
     setTab('detail')
     setActiveSubTab('workout')
     setPlanForm(SAMPLE_WORKOUT)
@@ -310,6 +311,21 @@ export default function AdminPanel() {
                 )
               } catch { return null }
             })()}
+
+            {/* Sculpting focus areas */}
+            {selectedDetail.sculpting && selectedDetail.sculpting.selected_muscles?.length > 0 && (
+              <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.15)', borderRadius: '4px', padding: '1rem 1.25rem', marginBottom: '1.5rem' }}>
+                <div style={{ fontSize: '0.75rem', color: '#c9a84c', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>🏆 Body Sculpting Focus Areas</div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: selectedDetail.sculpting.sculpting_goals ? '0.75rem' : 0 }}>
+                  {selectedDetail.sculpting.selected_muscles.map(id => (
+                    <span key={id} style={{ fontSize: '0.78rem', padding: '0.25rem 0.75rem', borderRadius: '2px', background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.25)', color: '#c9a84c' }}>{id.charAt(0).toUpperCase() + id.slice(1)}</span>
+                  ))}
+                </div>
+                {selectedDetail.sculpting.sculpting_goals && (
+                  <div style={{ fontSize: '0.82rem', color: 'rgba(245,242,238,0.65)', fontStyle: 'italic', marginTop: '0.5rem' }}>"{selectedDetail.sculpting.sculpting_goals}"</div>
+                )}
+              </div>
+            )}
 
             {msg && <div style={s.successMsg}>{msg}</div>}
 
@@ -492,7 +508,22 @@ export default function AdminPanel() {
             <h1 style={s.pageTitle}>Video Library</h1>
             <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px', padding: '1.5rem', marginBottom: '2rem' }}>
               <h3 style={{ fontWeight: 500, marginBottom: '1rem' }}>Add New Video</h3>
-              {msg && <div style={s.successMsg}>{msg}</div>}
+              {/* Sculpting focus areas */}
+            {selectedDetail.sculpting && selectedDetail.sculpting.selected_muscles?.length > 0 && (
+              <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.15)', borderRadius: '4px', padding: '1rem 1.25rem', marginBottom: '1.5rem' }}>
+                <div style={{ fontSize: '0.75rem', color: '#c9a84c', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>🏆 Body Sculpting Focus Areas</div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: selectedDetail.sculpting.sculpting_goals ? '0.75rem' : 0 }}>
+                  {selectedDetail.sculpting.selected_muscles.map(id => (
+                    <span key={id} style={{ fontSize: '0.78rem', padding: '0.25rem 0.75rem', borderRadius: '2px', background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.25)', color: '#c9a84c' }}>{id.charAt(0).toUpperCase() + id.slice(1)}</span>
+                  ))}
+                </div>
+                {selectedDetail.sculpting.sculpting_goals && (
+                  <div style={{ fontSize: '0.82rem', color: 'rgba(245,242,238,0.65)', fontStyle: 'italic', marginTop: '0.5rem' }}>"{selectedDetail.sculpting.sculpting_goals}"</div>
+                )}
+              </div>
+            )}
+
+            {msg && <div style={s.successMsg}>{msg}</div>}
               <div style={s.formGrid}>
                 <div style={{ gridColumn: '1 / -1' }}><label style={s.lbl}>Video Title</label><input value={videoForm.title} onChange={e => setVideoForm(f => ({ ...f, title: e.target.value }))} placeholder="e.g. How to Do a Perfect Squat" /></div>
                 <div style={{ gridColumn: '1 / -1' }}><label style={s.lbl}>YouTube Embed URL</label><input value={videoForm.video_url} onChange={e => setVideoForm(f => ({ ...f, video_url: e.target.value }))} placeholder="https://www.youtube.com/embed/VIDEO_ID" /></div>

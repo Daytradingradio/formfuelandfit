@@ -11,6 +11,7 @@ const workoutRoutes = require('./routes/workouts');
 const nutritionRoutes = require('./routes/nutrition');
 const messagesRoutes = require('./routes/messages');
 const videosRoutes = require('./routes/videos');
+const sculptingRoutes = require('./routes/sculpting');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,6 +28,7 @@ app.use('/api/workouts', workoutRoutes);
 app.use('/api/nutrition', nutritionRoutes);
 app.use('/api/messages', messagesRoutes);
 app.use('/api/videos', videosRoutes);
+app.use('/api/sculpting', sculptingRoutes);
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.get('*', (req, res) => {

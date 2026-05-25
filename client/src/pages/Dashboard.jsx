@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import BodySculpting from './BodySculpting'
 import { useAuth } from '../context/AuthContext'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
@@ -336,6 +337,7 @@ export default function Dashboard() {
             ['videos', '🎬', 'Video Library'],
             ['checkin', '📊', 'Check-ins'],
             ['messages', '💬', `Messages${unreadCount > 0 ? ` (${unreadCount})` : ''}`],
+            ['sculpting', '🏆', 'Body Sculpting'],
           ].map(([t, icon, label]) => (
             <button key={t} onClick={() => setTab(t)}
               style={{ ...s.navBtn, ...(tab === t ? s.navActive : {}), color: unreadCount > 0 && t === 'messages' ? '#c9a84c' : undefined }}>
@@ -570,6 +572,11 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+        )}
+
+        {/* BODY SCULPTING TAB */}
+        {tab === 'sculpting' && (
+          <BodySculpting getToken={getToken} member={member} />
         )}
 
       </main>
