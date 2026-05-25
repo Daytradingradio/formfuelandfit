@@ -109,9 +109,12 @@ export default function Dashboard() {
       setUnreadCount(u.count || 0)
       setVideos(v.videos || [])
       // Show intake only if never completed - check localStorage
-      const intakeKey = `fff_intake_done_${member?.id || ''}`
-      const alreadyDone = localStorage.getItem(intakeKey)
-      if (!alreadyDone) setShowIntake(true)
+      // Never show intake for admin accounts
+      if (!member?.is_admin) {
+        const intakeKey = `fff_intake_done_${member?.id || ''}`
+        const alreadyDone = localStorage.getItem(intakeKey)
+        if (!alreadyDone) setShowIntake(true)
+      }
     }).finally(() => setLoading(false))
   }, [])
 
