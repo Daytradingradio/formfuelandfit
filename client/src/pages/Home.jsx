@@ -269,9 +269,9 @@ export default function Home() {
           <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2rem', letterSpacing: '0.04em', color: '#f5f2ee', marginBottom: '2rem' }}>What to Expect</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.08)' }}>
             {[
-              { icon: '📋', title: 'Before Your Session', desc: 'You'll receive a short intake form covering your goals, fitness level, and any injuries. Sawyer reviews it before you meet so every minute of your session is dialed in.' },
+              { icon: '📋', title: 'Before Your Session', desc: "You'll receive a short intake form covering your goals, fitness level, and any injuries. Sawyer reviews it before you meet so every minute of your session is dialed in." },
               { icon: '⚡', title: 'During Your Session', desc: 'Expect to work hard. Every session is structured — warmup, main lifts, accessory work, and a cooldown. Sawyer coaches your form rep by rep and pushes you to your limit.' },
-              { icon: '📱', title: 'After Your Session', desc: 'You'll get a full written breakdown of what you did, what to work on, and your next session plan. Plus direct access to Sawyer via the member messaging system.' },
+              { icon: '📱', title: 'After Your Session', desc: "You'll get a full written breakdown of what you did, what to work on, and your next session plan. Plus direct access to Sawyer via the member messaging system." },
             ].map(w => (
               <div key={w.title} style={{ background: '#111111', padding: '2.5rem 2rem' }}>
                 <span style={{ fontSize: '2rem', display: 'block', marginBottom: '1rem' }}>{w.icon}</span>
