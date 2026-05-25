@@ -33,9 +33,9 @@ const GOALS_BY_MUSCLE = {
 function BodyFigure({ selected, onToggle, view, gender }) {
   const cx = 110, W = 220, H = 480
 
-  const muscleColor = (id) => selected.has(id) ? MUSCLES[id]?.color : 'rgba(255,255,255,0.06)'
-  const muscleOpacity = (id) => selected.has(id) ? '0.9' : '0.2'
-  const muscleStroke = (id) => selected.has(id) ? MUSCLES[id]?.color : 'rgba(255,255,255,0.15)'
+  const muscleColor = (id) => selected.has(id) ? MUSCLES[id]?.color : '#2a2a3a'
+  const muscleOpacity = (id) => selected.has(id) ? '1' : '0.9'
+  const muscleStroke = (id) => selected.has(id) ? MUSCLES[id]?.color : '#4a4a6a'
 
   const frontMuscles = [
     { id: 'chest', d: `M${cx-24} 78 C${cx-26} 78 ${cx-28} 84 ${cx-28} 92 L${cx-26} 118 C${cx-20} 126 ${cx-10} 130 ${cx-2} 130 L${cx+2} 130 C${cx+12} 130 ${cx+20} 126 ${cx+26} 118 L${cx+28} 92 C${cx+28} 84 ${cx+26} 78 ${cx+24} 78 C${cx+16} 74 ${cx+8} 72 ${cx} 72 C${cx-8} 72 ${cx-16} 74 ${cx-24} 78 Z` },
@@ -64,9 +64,9 @@ function BodyFigure({ selected, onToggle, view, gender }) {
   return (
     <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} style={{ cursor: 'pointer', display: 'block' }}>
       {/* Body base */}
-      <ellipse cx={cx} cy={35} rx={18} ry={22} fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
+      <ellipse cx={cx} cy={35} rx={18} ry={22} fill="#2a2a3a" stroke="#4a4a6a" strokeWidth="1" />
       {/* Neck */}
-      <rect x={cx-8} y={54} width={16} height={20} rx={4} fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" strokeWidth="0.5" />
+      <rect x={cx-8} y={54} width={16} height={20} rx={4} fill="#2a2a3a" stroke="#4a4a6a" strokeWidth="1" />
 
       {muscles.map(({ id, d }) => (
         <path key={id} d={d}
@@ -83,7 +83,7 @@ function BodyFigure({ selected, onToggle, view, gender }) {
       <path d={view === 'front'
         ? `M${cx} 18 C${cx-10} 18 ${cx-20} 28 ${cx-20} 44 L${cx-24} 58 C${cx-30} 64 ${cx-32} 74 ${cx-30} 86 L${cx-28} 136 C${cx-28} 152 ${cx-26} 165 ${cx-22} 170 L${cx-20} 215 C${cx-20} 228 ${cx-18} 240 ${cx-16} 246 L${cx-16} 310 C${cx-18} 322 ${cx-20} 345 ${cx-20} 368 L${cx-18} 420 C${cx-14} 445 ${cx-10} 458 ${cx-8} 470 L${cx+8} 470 C${cx+10} 458 ${cx+14} 445 ${cx+18} 420 L${cx+20} 368 C${cx+20} 345 ${cx+18} 322 ${cx+16} 310 L${cx+16} 246 C${cx+18} 240 ${cx+20} 228 ${cx+20} 215 L${cx+22} 170 C${cx+26} 165 ${cx+28} 152 ${cx+28} 136 L${cx+30} 86 C${cx+32} 74 ${cx+30} 64 ${cx+24} 58 L${cx+20} 44 C${cx+20} 28 ${cx+10} 18 ${cx} 18 Z`
         : `M${cx} 18 C${cx-10} 18 ${cx-20} 28 ${cx-20} 44 L${cx-24} 58 C${cx-30} 64 ${cx-32} 74 ${cx-30} 86 L${cx-28} 138 C${cx-28} 155 ${cx-26} 168 ${cx-22} 172 L${cx-20} 216 C${cx-20} 230 ${cx-18} 242 ${cx-16} 248 L${cx-16} 315 C${cx-18} 328 ${cx-20} 348 ${cx-20} 372 L${cx-18} 425 C${cx-14} 448 ${cx-10} 462 ${cx-8} 475 L${cx+8} 475 C${cx+10} 462 ${cx+14} 448 ${cx+18} 425 L${cx+20} 372 C${cx+20} 348 ${cx+18} 328 ${cx+16} 315 L${cx+16} 248 C${cx+18} 242 ${cx+20} 230 ${cx+20} 216 L${cx+22} 172 C${cx+26} 168 ${cx+28} 155 ${cx+28} 138 L${cx+30} 86 C${cx+32} 74 ${cx+30} 64 ${cx+24} 58 L${cx+20} 44 C${cx+20} 28 ${cx+10} 18 ${cx} 18 Z`}
-        fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="0.75" />
+        fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
     </svg>
   )
 }
@@ -145,8 +145,8 @@ export default function BodySculpting({ getToken, member }) {
 
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.5rem', letterSpacing: '0.04em', color: '#f5f2ee', marginBottom: '0.5rem' }}>Body Sculpting</h1>
-      <p style={{ color: 'rgba(245,242,238,0.7)', fontSize: '0.9rem', marginBottom: '2rem' }}>
+      <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.5rem', letterSpacing: '0.04em', color: '#ffffff', marginBottom: '0.5rem' }}>Body Sculpting</h1>
+      <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem', marginBottom: '2rem' }}>
         Tap the muscle groups you want to focus on. Sawyer will see your selections and build your program around them.
       </p>
 
@@ -173,11 +173,11 @@ export default function BodySculpting({ getToken, member }) {
             </div>
           </div>
 
-          <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px', padding: '1rem', display: 'flex', justifyContent: 'center' }}>
+          <div style={{ background: '#0d0d1a', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '4px', padding: '1rem', display: 'flex', justifyContent: 'center' }}>
             <BodyFigure selected={selected} onToggle={toggleMuscle} view={view} gender={gender} />
           </div>
 
-          <p style={{ fontSize: '0.75rem', color: 'rgba(245,242,238,0.4)', textAlign: 'center', marginTop: '0.5rem' }}>
+          <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', textAlign: 'center', marginTop: '0.5rem' }}>
             Tap muscle groups to select
           </p>
         </div>
@@ -186,10 +186,10 @@ export default function BodySculpting({ getToken, member }) {
         <div>
           {/* Muscle group chips */}
           <div style={{ marginBottom: '1.5rem' }}>
-            <div style={{ fontSize: '0.72rem', color: 'rgba(245,242,238,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Or tap to select</div>
+            <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>Or tap to select</div>
             {groups.map(group => (
               <div key={group} style={{ marginBottom: '0.75rem' }}>
-                <div style={{ fontSize: '0.72rem', color: 'rgba(245,242,238,0.4)', letterSpacing: '0.08em', marginBottom: '0.4rem' }}>{group}</div>
+                <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.6)', letterSpacing: '0.08em', marginBottom: '0.4rem' }}>{group}</div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                   {Object.entries(MUSCLES).filter(([,m]) => m.group === group).map(([id, m]) => (
                     <button key={id} onClick={() => toggleMuscle(id)}
@@ -205,7 +205,7 @@ export default function BodySculpting({ getToken, member }) {
           {/* Goal type toggle */}
           {selectedList.length > 0 && (
             <div style={{ marginBottom: '1.5rem' }}>
-              <div style={{ fontSize: '0.72rem', color: 'rgba(245,242,238,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>My goal for these areas</div>
+              <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>My goal for these areas</div>
               <div style={{ display: 'flex', gap: '8px', marginBottom: '1rem' }}>
                 {[['sculpt','💪 Build & Sculpt'],['cardio','🔥 Tone & Define']].map(([t, l]) => (
                   <button key={t} onClick={() => setGoalType(t)}
@@ -219,7 +219,7 @@ export default function BodySculpting({ getToken, member }) {
 
           {/* Selected muscles with exercises */}
           {selectedList.length === 0 ? (
-            <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px', padding: '2rem', textAlign: 'center', color: 'rgba(245,242,238,0.4)', fontSize: '0.9rem' }}>
+            <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px', padding: '2rem', textAlign: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem' }}>
               Select muscle groups on the body figure or use the chips above to see recommended exercises
             </div>
           ) : (
@@ -233,20 +233,20 @@ export default function BodySculpting({ getToken, member }) {
                     <div style={{ background: m.color + '15', padding: '0.75rem 1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: `1px solid ${m.color}22` }}>
                       <div>
                         <span style={{ fontWeight: 500, fontSize: '0.95rem', color: m.color }}>{m.label}</span>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(245,242,238,0.5)', marginLeft: '0.75rem' }}>{m.group}</span>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.7)', marginLeft: '0.75rem' }}>{m.group}</span>
                       </div>
-                      <button onClick={() => toggleMuscle(id)} style={{ background: 'none', border: 'none', color: 'rgba(245,242,238,0.3)', cursor: 'pointer', fontSize: '1rem' }}>✕</button>
+                      <button onClick={() => toggleMuscle(id)} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', cursor: 'pointer', fontSize: '1rem' }}>✕</button>
                     </div>
                     {goalInfo && (
-                      <div style={{ padding: '0.6rem 1rem', background: 'rgba(255,255,255,0.02)', borderBottom: `1px solid ${m.color}15`, fontSize: '0.8rem', color: 'rgba(245,242,238,0.65)', fontStyle: 'italic' }}>
+                      <div style={{ padding: '0.6rem 1rem', background: 'rgba(255,255,255,0.02)', borderBottom: `1px solid ${m.color}15`, fontSize: '0.8rem', color: 'rgba(255,255,255,0.8)', fontStyle: 'italic' }}>
                         {goalType === 'sculpt' ? goalInfo.sculpt : goalInfo.cardio}
                       </div>
                     )}
                     <div style={{ padding: '0.75rem 1rem' }}>
-                      <div style={{ fontSize: '0.7rem', color: 'rgba(245,242,238,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Top exercises</div>
+                      <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Top exercises</div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                         {m.exercises.map(ex => (
-                          <span key={ex} style={{ background: 'var(--surface2)', border: '1px solid var(--border)', padding: '0.3rem 0.75rem', borderRadius: '2px', fontSize: '0.78rem', color: 'rgba(245,242,238,0.75)' }}>{ex}</span>
+                          <span key={ex} style={{ background: 'var(--surface2)', border: '1px solid var(--border)', padding: '0.3rem 0.75rem', borderRadius: '2px', fontSize: '0.78rem', color: 'rgba(255,255,255,0.88)' }}>{ex}</span>
                         ))}
                       </div>
                     </div>
@@ -259,7 +259,7 @@ export default function BodySculpting({ getToken, member }) {
           {/* Notes to Sawyer */}
           {selectedList.length > 0 && (
             <div style={{ marginTop: '1.5rem' }}>
-              <label style={{ display: 'block', fontSize: '0.72rem', color: 'rgba(245,242,238,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
+              <label style={{ display: 'block', fontSize: '0.72rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
                 Additional notes for Sawyer (optional)
               </label>
               <textarea
@@ -267,7 +267,7 @@ export default function BodySculpting({ getToken, member }) {
                 onChange={e => { setSculptingGoals(e.target.value); setSaved(false) }}
                 placeholder="e.g. I want bigger arms and a more defined chest — I'm okay with bulk. My legs need the most work..."
                 rows={3}
-                style={{ width: '100%', resize: 'vertical', background: 'var(--surface2)', border: '1px solid var(--border)', color: '#f5f2ee', padding: '0.75rem 1rem', fontFamily: 'inherit', fontSize: '0.85rem', borderRadius: '2px', outline: 'none' }}
+                style={{ width: '100%', resize: 'vertical', background: 'var(--surface2)', border: '1px solid var(--border)', color: '#ffffff', padding: '0.75rem 1rem', fontFamily: 'inherit', fontSize: '0.85rem', borderRadius: '2px', outline: 'none' }}
               />
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.75rem' }}>
                 <button
@@ -286,7 +286,7 @@ export default function BodySculpting({ getToken, member }) {
   )
 }
 
-const btnStyle = { background: 'none', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(245,242,238,0.5)', padding: '0.35rem 0.85rem', borderRadius: '2px', fontSize: '0.78rem', cursor: 'pointer', letterSpacing: '0.05em' }
+const btnStyle = { background: 'none', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)', padding: '0.35rem 0.85rem', borderRadius: '2px', fontSize: '0.78rem', cursor: 'pointer', letterSpacing: '0.05em' }
 const btnActive = { background: 'rgba(201,168,76,0.12)', borderColor: '#c9a84c', color: '#c9a84c' }
-const chipStyle = { background: 'none', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(245,242,238,0.55)', padding: '0.3rem 0.85rem', borderRadius: '2px', fontSize: '0.78rem', cursor: 'pointer', letterSpacing: '0.04em', transition: 'all 0.15s' }
+const chipStyle = { background: 'none', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.75)', padding: '0.3rem 0.85rem', borderRadius: '2px', fontSize: '0.78rem', cursor: 'pointer', letterSpacing: '0.04em', transition: 'all 0.15s' }
 const s = { surface: '#161616', border: 'rgba(255,255,255,0.08)', surface2: '#1e1e1e', muted: 'rgba(245,242,238,0.45)' }
