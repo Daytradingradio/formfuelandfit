@@ -11,7 +11,7 @@ export default function Home() {
         <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.4rem', letterSpacing: '0.12em', color: '#c9a84c' }}>Form, Fuel & Fit</div>
         <div style={{ display: 'flex', gap: '2.5rem', listStyle: 'none' }}>
           {['Goals','About','Plans','Nutrition'].map(l => (
-            <a key={l} href={`#${l.toLowerCase()}`} style={{ color: 'rgba(245,242,238,0.45)', textDecoration: 'none', fontSize: '0.82rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{l}</a>
+            <a key={l} href={`#${l.toLowerCase()}`} style={{ color: 'rgba(245,242,238,0.85)', textDecoration: 'none', fontSize: '0.82rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{l}</a>
           ))}
         </div>
         <button onClick={() => navigate('/signup')} style={{ background: '#c9a84c', color: '#0a0a0a', padding: '0.6rem 1.6rem', borderRadius: '2px', fontSize: '0.8rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', border: 'none', cursor: 'pointer' }}>Get Started</button>
@@ -19,7 +19,8 @@ export default function Home() {
 
       {/* HERO */}
       <section style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 4rem 6rem', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 80% at 70% 40%, rgba(201,168,76,0.07) 0%, transparent 60%), linear-gradient(160deg, #0a0a0a 0%, #111 50%, #0d0d0d 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'url("/images/sawyer_hero.jpg") center 20% / cover no-repeat' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.6) 55%, rgba(10,10,10,0.2) 100%)' }} />
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)', backgroundSize: '80px 80px', maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 30%, transparent 100%)' }} />
 
         <div style={{ fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', position: 'relative', zIndex: 1 }}>
@@ -31,7 +32,7 @@ export default function Home() {
           Build<br />Your<br /><span style={{ fontFamily: "'DM Serif Display', serif", fontStyle: 'italic', color: '#c9a84c', fontSize: '0.75em' }}>Best Body.</span>
         </h1>
 
-        <p style={{ marginTop: '2rem', maxWidth: '480px', fontSize: '1rem', color: 'rgba(245,242,238,0.45)', lineHeight: 1.7, position: 'relative', zIndex: 1 }}>
+        <p style={{ marginTop: '2rem', maxWidth: '480px', fontSize: '1rem', color: 'rgba(245,242,238,0.85)', lineHeight: 1.7, position: 'relative', zIndex: 1 }}>
           Custom workout programs and precision nutrition plans designed by Sawyer Kurisko — 5 years of real training, real results, built around your goals.
         </p>
 
@@ -44,7 +45,7 @@ export default function Home() {
           {[['5+','Years Training'],['3','Program Goals'],['100%','Custom Plans']].map(([n, l]) => (
             <div key={l} style={{ textAlign: 'right' }}>
               <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.8rem', lineHeight: 1, color: '#f5f2ee', letterSpacing: '0.05em' }}>{n}</div>
-              <div style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(245,242,238,0.45)', marginTop: '0.2rem' }}>{l}</div>
+              <div style={{ fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(245,242,238,0.85)', marginTop: '0.2rem' }}>{l}</div>
             </div>
           ))}
         </div>
@@ -68,7 +69,7 @@ export default function Home() {
               onMouseLeave={e => e.currentTarget.style.background = '#111111'}>
               <span style={{ fontSize: '2rem', marginBottom: '1.5rem', display: 'block' }}>{g.icon}</span>
               <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.6rem', letterSpacing: '0.05em', color: '#f5f2ee', marginBottom: '0.75rem' }}>{g.title}</div>
-              <p style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.45)', lineHeight: 1.7 }}>{g.desc}</p>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.85)', lineHeight: 1.7 }}>{g.desc}</p>
             </div>
           ))}
         </div>
@@ -78,10 +79,10 @@ export default function Home() {
       <section id="about" style={{ padding: '7rem 4rem', background: '#161616' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
           <div style={{ position: 'relative' }}>
-            <div style={{ width: '100%', aspectRatio: '3/4', background: '#1e1e1e', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '1rem', color: 'rgba(245,242,238,0.45)', fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              <span style={{ fontSize: '3rem', opacity: 0.3 }}>📷</span>
-              <span>Sawyer's photo here</span>
-            </div>
+            <div style={{ width: '100%', aspectRatio: '3/4', background: '#1e1e1e', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '1rem', color: 'rgba(245,242,238,0.85)', fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              </div>
+            <img src="/images/sawyer_about.jpg" style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} alt="Sawyer Kurisko" />
+            <div style={{ display: 'none' }}>
             <div style={{ position: 'absolute', bottom: '-1.5rem', right: '-1.5rem', width: '60%', height: '60%', border: '1px solid rgba(201,168,76,0.15)', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', top: '2rem', left: '-2rem', background: '#c9a84c', color: '#0a0a0a', padding: '1.5rem', textAlign: 'center', width: '90px' }}>
               <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.5rem', lineHeight: 1, display: 'block' }}>5</span>
@@ -95,11 +96,11 @@ export default function Home() {
             <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', lineHeight: 1, letterSpacing: '0.04em', color: '#f5f2ee', marginBottom: '1.5rem' }}>
               Meet <span style={{ fontFamily: "'DM Serif Display', serif", fontStyle: 'italic', color: '#c9a84c' }}>Sawyer</span><br />Kurisko
             </h2>
-            <p style={{ fontSize: '0.95rem', color: 'rgba(245,242,238,0.45)', lineHeight: 1.8, marginBottom: '1.25rem' }}>At 19, Sawyer Kurisko has spent the last five years building something most people spend a lifetime chasing — a disciplined, structured approach to training and nutrition that actually works.</p>
-            <p style={{ fontSize: '0.95rem', color: 'rgba(245,242,238,0.45)', lineHeight: 1.8, marginBottom: '1.25rem' }}>No shortcuts. No fads. Just consistent effort, an obsession with proper form, and a deep understanding of how food fuels performance. What Sawyer teaches is what Sawyer lives.</p>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(245,242,238,0.85)', lineHeight: 1.8, marginBottom: '1.25rem' }}>At 19, Sawyer Kurisko has spent the last five years building something most people spend a lifetime chasing — a disciplined, structured approach to training and nutrition that actually works.</p>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(245,242,238,0.85)', lineHeight: 1.8, marginBottom: '1.25rem' }}>No shortcuts. No fads. Just consistent effort, an obsession with proper form, and a deep understanding of how food fuels performance. What Sawyer teaches is what Sawyer lives.</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '2rem' }}>
               {['Strength Training','Nutrition Coaching','Body Composition','Fat Loss','Muscle Building','Remote Coaching'].map(p => (
-                <span key={p} style={{ padding: '0.4rem 1rem', border: '1px solid rgba(255,255,255,0.08)', fontSize: '0.75rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(245,242,238,0.45)' }}>{p}</span>
+                <span key={p} style={{ padding: '0.4rem 1rem', border: '1px solid rgba(255,255,255,0.08)', fontSize: '0.75rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(245,242,238,0.85)' }}>{p}</span>
               ))}
             </div>
           </div>
@@ -120,13 +121,13 @@ export default function Home() {
           ].map(p => (
             <div key={p.tier} style={{ background: p.featured ? 'linear-gradient(160deg, rgba(201,168,76,0.06) 0%, #161616 60%)' : '#161616', border: p.featured ? '1px solid #c9a84c' : '1px solid rgba(255,255,255,0.08)', padding: '2.5rem 2rem', position: 'relative' }}>
               {p.featured && <div style={{ position: 'absolute', top: '-1px', left: '50%', transform: 'translateX(-50%)', background: '#c9a84c', color: '#0a0a0a', fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 500, padding: '0.3rem 1rem' }}>Most Popular</div>}
-              <div style={{ fontSize: '0.7rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(245,242,238,0.45)', marginBottom: '1rem' }}>{p.tier}</div>
+              <div style={{ fontSize: '0.7rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(245,242,238,0.85)', marginBottom: '1rem' }}>{p.tier}</div>
               <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '4rem', lineHeight: 1, color: '#f5f2ee', letterSpacing: '0.02em' }}><sup style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '1.2rem', verticalAlign: 'top', marginTop: '0.5rem' }}>$</sup>{p.price}</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(245,242,238,0.45)', marginBottom: '2rem' }}>per month</div>
+              <div style={{ fontSize: '0.8rem', color: 'rgba(245,242,238,0.85)', marginBottom: '2rem' }}>per month</div>
               <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)', margin: '1.5rem 0' }} />
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
                 {p.features.map(f => (
-                  <li key={f} style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.45)', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                  <li key={f} style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.85)', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                     <span style={{ color: '#c9a84c', fontSize: '0.75rem', marginTop: '0.15rem', flexShrink: 0 }}>✓</span>{f}
                   </li>
                 ))}
@@ -153,7 +154,7 @@ export default function Home() {
             <div key={n} style={{ padding: '2.5rem 2rem', borderRight: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
               <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '4rem', lineHeight: 1, color: 'rgba(255,255,255,0.08)', letterSpacing: '0.05em', marginBottom: '1rem' }}>{n}</div>
               <div style={{ fontSize: '1rem', fontWeight: 500, color: '#f5f2ee', marginBottom: '0.75rem' }}>{t}</div>
-              <p style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.45)', lineHeight: 1.7 }}>{d}</p>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.85)', lineHeight: 1.7 }}>{d}</p>
             </div>
           ))}
         </div>
@@ -164,10 +165,10 @@ export default function Home() {
         <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.2rem', letterSpacing: '0.12em', color: '#c9a84c' }}>Form, Fuel & Fit</div>
         <div style={{ display: 'flex', gap: '2rem' }}>
           {['Programs','About','Pricing','Contact','Instagram'].map(l => (
-            <a key={l} href="#" style={{ fontSize: '0.75rem', color: 'rgba(245,242,238,0.45)', textDecoration: 'none', letterSpacing: '0.05em' }}>{l}</a>
+            <a key={l} href="#" style={{ fontSize: '0.75rem', color: 'rgba(245,242,238,0.85)', textDecoration: 'none', letterSpacing: '0.05em' }}>{l}</a>
           ))}
         </div>
-        <div style={{ fontSize: '0.75rem', color: 'rgba(245,242,238,0.45)', letterSpacing: '0.05em' }}>© 2026 Form, Fuel & Fit — Sawyer Kurisko</div>
+        <div style={{ fontSize: '0.75rem', color: 'rgba(245,242,238,0.85)', letterSpacing: '0.05em' }}>© 2026 Form, Fuel & Fit — Sawyer Kurisko</div>
       </footer>
 
     </div>
