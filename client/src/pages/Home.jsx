@@ -20,7 +20,7 @@ export default function Home() {
       {/* HERO */}
       <section style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 4rem 6rem', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'url("/images/sawyer_hero.jpg") center 20% / cover no-repeat' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.6) 55%, rgba(10,10,10,0.2) 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,10,10,0.78) 0%, rgba(10,10,10,0.45) 55%, rgba(10,10,10,0.15) 100%)' }} />
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)', backgroundSize: '80px 80px', maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 30%, transparent 100%)' }} />
 
         <div style={{ fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', position: 'relative', zIndex: 1 }}>
@@ -79,7 +79,7 @@ export default function Home() {
       <section id="about" style={{ padding: '7rem 4rem', background: '#161616' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
           <div style={{ position: 'relative' }}>
-            <img src="/images/sawyer_about.jpg" style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} alt="Sawyer Kurisko" />
+            <img src="/images/sawyer_about.jpg" style={{ width: '100%', maxHeight: '550px', objectFit: 'cover', objectPosition: 'center 10%', display: 'block', borderRadius: '2px' }} alt="Sawyer Kurisko" />
             <div style={{ position: 'absolute', bottom: '-1.5rem', right: '-1.5rem', width: '60%', height: '60%', border: '1px solid rgba(201,168,76,0.15)', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', top: '2rem', left: '-2rem', background: '#c9a84c', color: '#0a0a0a', padding: '1.5rem', textAlign: 'center', width: '90px' }}>
               <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.5rem', lineHeight: 1, display: 'block' }}>5</span>
