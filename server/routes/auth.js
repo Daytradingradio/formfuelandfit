@@ -17,8 +17,8 @@ router.post('/signup', async (req, res) => {
     if (existing.rows.length > 0) return res.status(409).json({ error: 'Email already registered' });
     const password_hash = await bcrypt.hash(password, 12);
     const result = await pool.query(
-      `INSERT INTO members (email, password_hash, first_name, last_name, goal)
-       VALUES ($1,$2,$3,$4,$5) RETURNING id, email, first_name, last_name, tier, is_admin`,
+      `INSERT INTO members (email, password_hash, first_name, last_name, goal, subscription_status, tier)
+       VALUES ($1,$2,$3,$4,$5,'active','essential') RETURNING id, email, first_name, last_name, tier, is_admin`,
       [email, password_hash, first_name || '', last_name || '', goal || null]
     );
     const member = result.rows[0];
