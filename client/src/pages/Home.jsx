@@ -79,7 +79,7 @@ export default function Home() {
       <section id="about" style={{ padding: '7rem 4rem', background: '#161616' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
           <div style={{ position: 'relative' }}>
-            <img src="/images/sawyer_about.jpg" style={{ width: '100%', maxHeight: '480px', objectFit: 'cover', objectPosition: 'center 25%', display: 'block', borderRadius: '2px' }} alt="Sawyer Kurisko" />
+            <img src="/images/sawyer_about.jpg" style={{ width: '100%', height: '500px', objectFit: 'contain', objectPosition: 'center top', display: 'block', borderRadius: '2px', background: '#161616' }} alt="Sawyer Kurisko" />
             <div style={{ position: 'absolute', bottom: '-1.5rem', right: '-1.5rem', width: '60%', height: '60%', border: '1px solid rgba(201,168,76,0.15)', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', top: '2rem', left: '-2rem', background: '#c9a84c', color: '#0a0a0a', padding: '1.5rem', textAlign: 'center', width: '90px' }}>
               <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.5rem', lineHeight: 1, display: 'block' }}>5</span>
@@ -157,6 +157,82 @@ export default function Home() {
         </div>
       </section>
 
+
+
+      {/* NUTRITION INFO SECTION */}
+      <section id="nutrition" style={{ padding: '7rem 4rem', background: '#111111' }}>
+        <div style={{ fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <span style={{ display: 'block', width: '30px', height: '1px', background: '#c9a84c' }} />Nutrition Coaching
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+          <div>
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', lineHeight: 1, letterSpacing: '0.04em', color: '#f5f2ee', marginBottom: '1.5rem' }}>
+              Fuel Your Body.<br /><span style={{ fontFamily: "'DM Serif Display', serif", fontStyle: 'italic', color: '#c9a84c' }}>Feed Your Results.</span>
+            </h2>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(245,242,238,0.85)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+              Training without proper nutrition is like driving a car with no gas. Sawyer builds every member a fully personalized nutrition plan — real foods, real macros, built around your goal and your lifestyle.
+            </p>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(245,242,238,0.85)', lineHeight: 1.8, marginBottom: '2rem' }}>
+              No cookie-cutter meal plans. No extreme diets. Just a clear, structured daily eating framework that works with your schedule and gets you results.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
+              {[
+                { icon: '🎯', title: 'Custom Macros', desc: 'Protein, carbs, and fats calculated specifically for your body weight, goal, and activity level.' },
+                { icon: '🍽️', title: 'Daily Meal Plans', desc: 'Full day of eating mapped out — breakfast through evening snack, with real food options.' },
+                { icon: '📈', title: 'Progress Adjustments', desc: 'As you hit milestones, Sawyer adjusts your nutrition to keep results coming.' },
+                { icon: '💊', title: 'Supplement Guidance', desc: 'Simple, effective supplement stack recommendations — nothing unnecessary.' },
+              ].map(item => (
+                <div key={item.title} style={{ background: '#161616', border: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem', borderRadius: '2px' }}>
+                  <span style={{ fontSize: '1.5rem', display: 'block', marginBottom: '0.75rem' }}>{item.icon}</span>
+                  <div style={{ fontWeight: 500, fontSize: '0.9rem', color: '#f5f2ee', marginBottom: '0.4rem' }}>{item.title}</div>
+                  <p style={{ fontSize: '0.8rem', color: 'rgba(245,242,238,0.85)', lineHeight: 1.6 }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <button onClick={() => navigate('/signup')} style={{ background: '#c9a84c', color: '#0a0a0a', padding: '1rem 2.5rem', borderRadius: '2px', fontSize: '0.85rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', border: 'none', cursor: 'pointer' }}>
+              Get My Nutrition Plan
+            </button>
+          </div>
+
+          {/* SAMPLE MEAL PLAN VISUAL */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            {[
+              { time: '7:00 AM', meal: 'Breakfast', foods: '5 eggs · Oatmeal · Banana', cals: '550 kcal', protein: '40g protein', color: '#c9a84c' },
+              { time: '10:00 AM', meal: 'Mid-Morning', foods: 'Greek yogurt · Whey shake · Almonds', cals: '350 kcal', protein: '35g protein', color: '#4caf7d' },
+              { time: '1:00 PM', meal: 'Lunch', foods: 'Chicken breast · White rice · Broccoli', cals: '650 kcal', protein: '50g protein', color: '#c9a84c' },
+              { time: '3:30 PM', meal: 'Pre-Workout', foods: 'Whey shake · Apple · Rice cake', cals: '400 kcal', protein: '30g protein', color: '#4c8eaf' },
+              { time: '6:00 PM', meal: 'Post-Workout', foods: 'Ground beef · Sweet potato · Salad', cals: '500 kcal', protein: '45g protein', color: '#c9a84c' },
+              { time: '8:00 PM', meal: 'Dinner', foods: 'Salmon · Vegetables · Quinoa', cals: '350 kcal', protein: '35g protein', color: '#4caf7d' },
+              { time: '10:00 PM', meal: 'Evening Snack', foods: 'Cottage cheese · Walnuts', cals: '200 kcal', protein: '25g protein', color: '#c9a84c' },
+            ].map((m, i) => (
+              <div key={i} style={{ background: '#161616', padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ width: '70px', flexShrink: 0 }}>
+                  <div style={{ fontSize: '0.65rem', color: m.color, letterSpacing: '0.08em', textTransform: 'uppercase' }}>{m.time}</div>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontWeight: 500, fontSize: '0.85rem', color: '#f5f2ee' }}>{m.meal}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(245,242,238,0.85)', marginTop: '0.15rem' }}>{m.foods}</div>
+                </div>
+                <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                  <div style={{ fontSize: '0.72rem', color: '#f5f2ee' }}>{m.cals}</div>
+                  <div style={{ fontSize: '0.65rem', color: '#4caf7d', marginTop: '0.1rem' }}>{m.protein}</div>
+                </div>
+              </div>
+            ))}
+            <div style={{ background: '#1e1e1e', padding: '1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ fontSize: '0.72rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(245,242,238,0.85)' }}>Daily Total</span>
+              <div style={{ display: 'flex', gap: '1.5rem' }}>
+                {[['2,800', 'kcal', '#c9a84c'], ['200g', 'protein', '#4caf7d'], ['310g', 'carbs', '#4c8eaf'], ['75g', 'fats', '#af6b4c']].map(([val, label, color]) => (
+                  <div key={label} style={{ textAlign: 'center' }}>
+                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.2rem', color, lineHeight: 1 }}>{val}</div>
+                    <div style={{ fontSize: '0.6rem', color: 'rgba(245,242,238,0.85)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* IN-PERSON & VIRTUAL TRAINING */}
       <section id="training" style={{ padding: '7rem 4rem', background: '#0a0a0a' }}>
