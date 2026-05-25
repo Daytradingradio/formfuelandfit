@@ -10,7 +10,7 @@ export default function Home() {
       <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.5rem 4rem', background: 'linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, transparent 100%)' }}>
         <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.4rem', letterSpacing: '0.12em', color: '#c9a84c' }}>Form, Fuel & Fit</div>
         <div style={{ display: 'flex', gap: '2.5rem', listStyle: 'none' }}>
-          {['Goals','About','Plans','Nutrition'].map(l => (
+          {['Goals','About','Plans','Nutrition','Training'].map(l => (
             <a key={l} href={`#${l.toLowerCase()}`} style={{ color: 'rgba(245,242,238,0.85)', textDecoration: 'none', fontSize: '0.82rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{l}</a>
           ))}
         </div>
@@ -154,6 +154,132 @@ export default function Home() {
               <p style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.85)', lineHeight: 1.7 }}>{d}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+
+      {/* IN-PERSON & VIRTUAL TRAINING */}
+      <section id="training" style={{ padding: '7rem 4rem', background: '#0a0a0a' }}>
+        <div style={{ fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <span style={{ display: 'block', width: '30px', height: '1px', background: '#c9a84c' }} />1-on-1 Training
+        </div>
+        <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: 1, letterSpacing: '0.04em', color: '#f5f2ee', marginBottom: '1rem' }}>Train With Sawyer</h2>
+        <p style={{ fontSize: '1rem', color: 'rgba(245,242,238,0.85)', maxWidth: '600px', lineHeight: 1.7, marginBottom: '4rem' }}>
+          Want the full hands-on experience? Sawyer trains clients in-person across the Tri-State Area — New York, New Jersey, and Connecticut. Or book a virtual session from anywhere in the world.
+        </p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '4rem' }}>
+
+          {/* IN-PERSON CARD */}
+          <div style={{ background: '#161616', border: '1px solid rgba(255,255,255,0.08)', padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: '#c9a84c' }} />
+            <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>🏋️</div>
+            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.8rem', letterSpacing: '0.05em', color: '#f5f2ee', marginBottom: '0.5rem' }}>In-Person Training</div>
+            <div style={{ fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#c9a84c', marginBottom: '1.5rem' }}>Tri-State Area · NY · NJ · CT</div>
+            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '3rem', color: '#f5f2ee', lineHeight: 1, marginBottom: '0.25rem' }}>
+              <sup style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '1.2rem', verticalAlign: 'top', marginTop: '0.5rem' }}>$</sup>50
+            </div>
+            <div style={{ fontSize: '0.8rem', color: 'rgba(245,242,238,0.85)', marginBottom: '2rem' }}>per session · 60–90 minutes</div>
+            <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)', margin: '1.5rem 0' }} />
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
+              {[
+                'Full 60–90 minute 1-on-1 session',
+                'Custom training program provided',
+                'Form correction & technique coaching',
+                'Available at your gym or local gym',
+                'Serving NY, NJ & CT area',
+                'Flexible scheduling — morning & evening',
+              ].map(f => (
+                <li key={f} style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.85)', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                  <span style={{ color: '#c9a84c', flexShrink: 0, marginTop: '0.1rem' }}>✓</span>{f}
+                </li>
+              ))}
+            </ul>
+            <a href="https://calendly.com/sawyerkurisko/in-person-training" target="_blank" rel="noopener noreferrer"
+              style={{ display: 'block', textAlign: 'center', padding: '1rem', background: '#c9a84c', color: '#0a0a0a', fontSize: '0.85rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none', borderRadius: '2px', transition: 'background 0.2s' }}
+              onMouseEnter={e => e.currentTarget.style.background = '#e8c97a'}
+              onMouseLeave={e => e.currentTarget.style.background = '#c9a84c'}>
+              Book In-Person Session
+            </a>
+          </div>
+
+          {/* VIRTUAL CARD */}
+          <div style={{ background: '#161616', border: '1px solid rgba(255,255,255,0.08)', padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: '#4c8eaf' }} />
+            <div style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>💻</div>
+            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.8rem', letterSpacing: '0.05em', color: '#f5f2ee', marginBottom: '0.5rem' }}>Virtual Training</div>
+            <div style={{ fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#4c8eaf', marginBottom: '1.5rem' }}>Train From Anywhere · Zoom / FaceTime</div>
+            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '3rem', color: '#f5f2ee', lineHeight: 1, marginBottom: '0.25rem' }}>
+              <sup style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '1.2rem', verticalAlign: 'top', marginTop: '0.5rem' }}>$</sup>50
+            </div>
+            <div style={{ fontSize: '0.8rem', color: 'rgba(245,242,238,0.85)', marginBottom: '2rem' }}>per session · 60–90 minutes</div>
+            <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)', margin: '1.5rem 0' }} />
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
+              {[
+                'Full 60–90 minute live video session',
+                'Real-time form coaching via camera',
+                'Custom program emailed after session',
+                'Train from your home or any gym',
+                'Available worldwide — any timezone',
+                'Zoom or FaceTime — your choice',
+              ].map(f => (
+                <li key={f} style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.85)', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                  <span style={{ color: '#4c8eaf', flexShrink: 0, marginTop: '0.1rem' }}>✓</span>{f}
+                </li>
+              ))}
+            </ul>
+            <a href="https://calendly.com/sawyerkurisko/virtual-training" target="_blank" rel="noopener noreferrer"
+              style={{ display: 'block', textAlign: 'center', padding: '1rem', background: 'transparent', color: '#f5f2ee', fontSize: '0.85rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none', borderRadius: '2px', border: '1px solid rgba(255,255,255,0.2)', transition: 'all 0.2s' }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = '#4c8eaf'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'}>
+              Book Virtual Session
+            </a>
+          </div>
+        </div>
+
+        {/* SESSION PACKAGES */}
+        <div style={{ background: '#161616', border: '1px solid rgba(255,255,255,0.08)', padding: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '0', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '2rem', marginBottom: '2rem' }}>
+            {[
+              { sessions: '1', price: '$50', label: 'Single Session', note: 'Try it out' },
+              { sessions: '5', price: '$225', label: '5-Session Pack', note: 'Save $25' },
+              { sessions: '10', price: '$400', label: '10-Session Pack', note: 'Save $100' },
+              { sessions: '20', price: '$700', label: '20-Session Pack', note: 'Best value — save $300' },
+            ].map((p, i, arr) => (
+              <div key={p.sessions} style={{ padding: '1.5rem 2rem', borderRight: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none', textAlign: 'center' }}>
+                <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.5rem', color: '#f5f2ee', lineHeight: 1 }}>{p.price}</div>
+                <div style={{ fontWeight: 500, fontSize: '0.9rem', margin: '0.5rem 0 0.25rem' }}>{p.label}</div>
+                <div style={{ fontSize: '0.75rem', color: '#c9a84c' }}>{p.note}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.85)', marginBottom: '1.5rem' }}>
+              All packages available for in-person or virtual sessions. Payment collected at time of booking.
+            </p>
+            <a href="https://calendly.com/sawyerkurisko" target="_blank" rel="noopener noreferrer"
+              style={{ display: 'inline-block', padding: '1rem 3rem', background: '#c9a84c', color: '#0a0a0a', fontSize: '0.85rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none', borderRadius: '2px' }}>
+              View All Available Times →
+            </a>
+          </div>
+        </div>
+
+        {/* WHAT TO EXPECT */}
+        <div style={{ marginTop: '4rem' }}>
+          <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2rem', letterSpacing: '0.04em', color: '#f5f2ee', marginBottom: '2rem' }}>What to Expect</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            {[
+              { icon: '📋', title: 'Before Your Session', desc: 'You'll receive a short intake form covering your goals, fitness level, and any injuries. Sawyer reviews it before you meet so every minute of your session is dialed in.' },
+              { icon: '⚡', title: 'During Your Session', desc: 'Expect to work hard. Every session is structured — warmup, main lifts, accessory work, and a cooldown. Sawyer coaches your form rep by rep and pushes you to your limit.' },
+              { icon: '📱', title: 'After Your Session', desc: 'You'll get a full written breakdown of what you did, what to work on, and your next session plan. Plus direct access to Sawyer via the member messaging system.' },
+            ].map(w => (
+              <div key={w.title} style={{ background: '#111111', padding: '2.5rem 2rem' }}>
+                <span style={{ fontSize: '2rem', display: 'block', marginBottom: '1rem' }}>{w.icon}</span>
+                <div style={{ fontWeight: 500, fontSize: '1rem', color: '#f5f2ee', marginBottom: '0.75rem' }}>{w.title}</div>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(245,242,238,0.85)', lineHeight: 1.7 }}>{w.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
