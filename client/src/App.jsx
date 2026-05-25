@@ -26,7 +26,7 @@ function AppRoutes() {
       <Route path="/signup" element={member ? <Navigate to="/dashboard" /> : <Signup />} />
       <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
       <Route path="/admin" element={<AdminRoute><AdminPanel /></AdminRoute>} />
-      <Route path="*" element={<Navigate to={member ? '/dashboard' : '/login'} />} />
+      <Route path="/" element={<Home />} />`n      <Route path="*" element={<Navigate to={member ? '/dashboard' : '/login'} />} />
     </Routes>
   )
 }
