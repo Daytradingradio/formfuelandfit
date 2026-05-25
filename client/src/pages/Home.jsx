@@ -79,10 +79,7 @@ export default function Home() {
       <section id="about" style={{ padding: '7rem 4rem', background: '#161616' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
           <div style={{ position: 'relative' }}>
-            <div style={{ width: '100%', aspectRatio: '3/4', background: '#1e1e1e', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '1rem', color: 'rgba(245,242,238,0.85)', fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              </div>
             <img src="/images/sawyer_about.jpg" style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} alt="Sawyer Kurisko" />
-            <div style={{ display: 'none' }}>
             <div style={{ position: 'absolute', bottom: '-1.5rem', right: '-1.5rem', width: '60%', height: '60%', border: '1px solid rgba(201,168,76,0.15)', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', top: '2rem', left: '-2rem', background: '#c9a84c', color: '#0a0a0a', padding: '1.5rem', textAlign: 'center', width: '90px' }}>
               <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.5rem', lineHeight: 1, display: 'block' }}>5</span>
