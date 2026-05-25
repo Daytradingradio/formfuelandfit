@@ -78,6 +78,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true)
   const [sendingMsg, setSendingMsg] = useState(false)
   const [showIntake, setShowIntake] = useState(false)
+  const [intakeChecked, setIntakeChecked] = useState(false)
   const [intakeStep, setIntakeStep] = useState(0)
   const [intakeDone, setIntakeDone] = useState(false)
   const [intakeData, setIntakeData] = useState({
@@ -107,8 +108,10 @@ export default function Dashboard() {
       setCheckins(c.checkins || [])
       setUnreadCount(u.count || 0)
       setVideos(v.videos || [])
-      // Show intake if no notes saved yet (first time)
-      if (!member?.notes) setShowIntake(true)
+      // Show intake only if never completed - check localStorage
+      const intakeKey = `fff_intake_done_${member?.id || ''}`
+      const alreadyDone = localStorage.getItem(intakeKey)
+      if (!alreadyDone) setShowIntake(true)
     }).finally(() => setLoading(false))
   }, [])
 
@@ -130,6 +133,9 @@ export default function Dashboard() {
     setSavingIntake(false)
     setShowIntake(false)
     setIntakeDone(true)
+    // Mark as done in localStorage so it never shows again
+    const intakeKey = `fff_intake_done_${member?.id || ''}`
+    localStorage.setItem(intakeKey, 'true')
   }
 
   const sendMessage = async () => {
@@ -312,7 +318,7 @@ export default function Dashboard() {
               )}
             </div>
             <div style={{ textAlign: 'center', paddingBottom: '1rem' }}>
-              <button onClick={() => setShowIntake(false)} style={{ background: 'none', border: 'none', color: 'var(--muted)', fontSize: '0.8rem', cursor: 'pointer' }}>Skip for now</button>
+              <button onClick={() => { setShowIntake(false); localStorage.setItem(`fff_intake_done_${member?.id || ''}`, 'skipped') }} style={{ background: 'none', border: 'none', color: 'var(--muted)', fontSize: '0.8rem', cursor: 'pointer' }}>Skip for now</button>
             </div>
           </div>
         </div>
